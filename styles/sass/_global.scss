@@ -1,0 +1,146 @@
+ /****** GENERAL STYLING ******/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: hidden;
+    background: white;
+    height:95vh;
+}
+
+.wrapper {
+    width: 100vw;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* FONT STYLING */
+
+h1, h2, h3, h4, p, a, li, ul {
+    line-height: 26px;
+}
+
+h1, h2, h3, h4, h5, a {
+    font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color:white;
+}
+
+h1 {
+    @include fluid-type (3rem,8rem, 360px, 1280px);
+    margin: 0;
+    line-height: 10rem;
+    font-family: 'Ultra',
+    serif;
+    text-shadow: 5px 5px 5px $charcoalBlack;
+
+}
+
+h2 {
+    @include fluid-type (1.5rem, 5rem, 360px, 1280px);
+    margin: 0;
+    line-height: 2.5rem;
+    display: inline;
+    font-family: 'Kanit', sans-serif;
+    text-shadow: 2px 2px $charcoalBlack,
+    2px -2px $charcoalBlack,
+    -2px 2px $charcoalBlack,
+    -2px -2px $charcoalBlack;
+}
+
+h3 {
+    @include fluid-type (1.8rem, 3rem, 360px, 1280px);
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    line-height: 4rem;
+    color: black;
+}
+
+h4 {
+    @include fluid-type (1.8rem, 3rem, 360px, 1280px);
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    line-height: 4rem;
+    color: black;
+}
+
+h5 {
+    @include fluid-type (1.5rem, 2rem, 360px, 1280px);
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    line-height: 4rem;
+    color: black;
+}
+
+p { 
+    font-family: 'Kanit', sans-serif;
+    @include fluid-type (1.5rem, 2.5rem, 360px, 1280px);
+    margin: 0;
+    line-height: 4rem;
+}
+
+
+li, 
+ul {
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 46px;
+    font-family: 'Cabin',
+    sans-serif;
+    @include fluid-type (1.5rem, 2.5rem, 360px, 1280px);
+}
+
+
+img {
+    width: 100%;
+    display: block;
+}
+
+button {
+    font-family: 'Oswald', sans-serif;
+    min-width: 8rem;
+    min-height: 4rem;
+    background: $orange;
+    @include fluid-type (2rem, 3rem, 360px, 1280px);
+    font-weight: bold;
+    color:#f6f6f6;
+    text-transform: uppercase;
+    border-radius: 25px;
+}
+
+.pBreak {
+    display: block;
+    margin-bottom: 2%;
+    word-wrap: break-word;
+}
+
+// accessibility focused hiding of labels.
+.visually-hidden:not(:focus):not(:active) {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    /* added line */
+}
+
+// ^end visually-hidden code
