@@ -11,6 +11,7 @@ header {
         justify-content: space-between;
         align-items: center;
         background: $yellow;
+        z-index: 10;
 
         .logo {
             width: 12vw;
@@ -29,11 +30,12 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     grid-template-rows: 1fr;
     grid-auto-flow: dense;
-    height: 100vh;
-    
+    height: 100%;
+    width: 100%;
 
     .halfHeader {
-        width: calc(50vw * 20vw);
+        height: 100%;
+        width: 100%;
         img {
             height: 100%;
             width: 100%;
@@ -49,15 +51,14 @@ header {
 
 .formBox {
     position: absolute;
-    top: 65%;
-    // width: 100vw;
+    top: 35%;
     display: flex;
     flex-direction: column;
 }
 
 form {
     @include fluid-type (1.5rem, 2.8rem, 360px, 1280px);
-    
+
     fieldset {
         display: flex;
         flex-direction: column;
@@ -102,5 +103,11 @@ input {
 
 .searchBoxClass:hover ~ .inputToolTip {
     visibility: visible;
+    z-index: 10;
     transition: 3s all ease-in;
+}
+
+main {
+    height: 100vh;
+    background: url('../../Assets/sebastien-marchand-oVIUvwm2dvM-unsplash.jpg')
 }

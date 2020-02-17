@@ -468,7 +468,7 @@ button {
 }
 
 header {
-  height: 100vh;
+  height: 107vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -491,6 +491,7 @@ header nav {
       -ms-flex-align: center;
           align-items: center;
   background: #ffe01b;
+  z-index: 10;
 }
 
 header nav .logo {
@@ -511,11 +512,13 @@ header nav h2 {
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   grid-auto-flow: dense;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 .headerGrid .halfHeader {
-  width: calc(50vw * 20vw);
+  height: 100%;
+  width: 100%;
 }
 
 .headerGrid .halfHeader img {
@@ -533,7 +536,7 @@ header nav h2 {
 
 .formBox {
   position: absolute;
-  top: 65%;
+  top: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -611,7 +614,69 @@ input {
 
 .searchBoxClass:hover ~ .inputToolTip {
   visibility: visible;
+  z-index: 10;
   -webkit-transition: 3s all ease-in;
   transition: 3s all ease-in;
+}
+
+main {
+  height: 100vh;
+  background: url("../../Assets/sebastien-marchand-oVIUvwm2dvM-unsplash.jpg");
+}
+
+main {
+  height: 100vh;
+}
+
+.recipesResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.recipesResults .recipesHeader {
+  width: 100%;
+  height: 7vh;
+}
+
+.recipesResults h2 {
+  font-family: "Kanit", sans-serif;
+  font-size: calc(2.6rem + 0.5vw);
+  width: 100%;
+  display: block;
+}
+
+.recipesResults .results {
+  width: 100%;
+}
+
+.recipesResults .suggestedRecipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.recipesResults .suggestedRecipes li {
+  width: calc(100% / 5);
+  border: 1px solid grey;
+  position: relative;
 }
 /*# sourceMappingURL=styles.css.map */
