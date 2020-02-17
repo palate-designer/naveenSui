@@ -1,6 +1,6 @@
 
 const recipeApp = {
-    key: 'e429c44d3e5e48beacacf5b14cc993a2',
+    key: 'baa233e2a8bc401a83b89ba0f32ef23c',
 };
 
 // Get recipes with user ingredients input (Whatever they have)
@@ -25,21 +25,14 @@ recipeApp.getrecipes = function (ingredientInput) {
                 // Used forEach function to go through each array and append into li
                 result.forEach(function (eachRecipe) {
                     // console.log(eachRecipe);
-                    const htmlToAppend = `
-                        <li>
-                            <a href="#">
-                            <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
-                            </a>
-                            <p>${eachRecipe.title}</p>
-                        </li>`
-                    $('ul.suggestedRecipes').append(htmlToAppend);
+                   
 
                     // Capturing ID of all the recipes in a variable and popping it in the link
                     const recipeId = eachRecipe.id;
-                    // console.log(recipeId);
+                    console.log(recipeId);
 
                     //Make ajax call with new end point with recipeID and go deep into how to make that recipe.
-
+                    //Ajax 2
                     $.ajax({
                         url: `https://api.spoonacular.com/recipes/${recipeId}/information`,
                         method: 'GET',
@@ -51,7 +44,15 @@ recipeApp.getrecipes = function (ingredientInput) {
                     }).then(function (eachInfo) {
                         console.log('Worked our ID', eachInfo);
                         const recipeInstruction = eachInfo.sourceUrl;
-
+                        const htmlToAppend = `
+                        <li>
+                            <a href="${recipeInstruction}" target="_blank">
+                            <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
+                            </a>
+                            <p>${eachRecipe.title}</p>
+                        </li>`
+                        $('ul.suggestedRecipes').append(htmlToAppend);
+                        
                     })
                 });
         }
