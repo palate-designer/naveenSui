@@ -1,95 +1,77 @@
-// 🧠🧠 LOGIC:
-    // Set a variable to store the input of the search box on the header.
-    // on click, search API with the string value.
-    // return the ID.
-    // console log to test.
 
-// 📝DECLARE VARIABLES (GLOBAL SCOPE)
-const myApp={
-    apiKey: "baa233e2a8bc401a83b89ba0f32ef23c",
+const recipeApp = {
+    key: 'e429c44d3e5e48beacacf5b14cc993a2',
 };
 
-let searchValue;
+// Get recipes with user ingredients input (Whatever they have)
+recipeApp.getrecipes = function (ingredientInput) {
 
-
-
-// 📧 Ajax request for ingredients search
-myApp.getInfo = function(userInput){
-
-    // ajax search:
+    // Ajax request 1
     $.ajax({
-        url: 'https://api.spoonacular.com/recipes/findByIngredients',
+        url: `https://api.spoonacular.com/recipes/findByIngredients`,
         method: 'GET',
         dataType: 'json',
         data: {
-            apiKey: myApp.apiKey,
-            format: 'json',
-            ingredients: userInput
+            apiKey: recipeApp.key,
+            ingredients: ingredientInput
         }
-    }).then(function(searchResult){
-        console.log('information returned: ', searchResult); //✔
-        
-        if (searchResult == false) {
-            console.log('no results');
+    }).then(function (result) {
+        // console.log('input related all the recipies are here', result);
+
+        if (result == false) {
+            // console.log('nothing to show');
         } else {
-            // using the forEach method to go through each array index without having to specify, and be able to search specifically for the id.
-            searchResults.forEach(function(eachRecipe){
-                console.log('results for: ', eachRecipe); //❌❌
+            $('li').hide() &&
+                // Used forEach function to go through each array and append into li
+                result.forEach(function (eachRecipe) {
+                    // console.log(eachRecipe);
+                    const htmlToAppend = `
+                        <li>
+                            <a href="#">
+                            <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
+                            </a>
+                            <p>${eachRecipe.title}</p>
+                        </li>`
+                    $('ul.suggestedRecipes').append(htmlToAppend);
 
-                // Naveen's portion:
-                const htmlToAppend = `
-                    <li>
-                        <a href="#">
-                        <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
-                        </a>
-                        <p>${eachRecipe.title}</p>
-                    </li>`
-                $('ul.suggestedRecipes').append(htmlToAppend);
+                    // Capturing ID of all the recipes in a variable and popping it in the link
+                    const recipeId = eachRecipe.id;
+                    // console.log(recipeId);
 
-                // Capturing ID of all the recipes in a variable and popping it in the link
-                const recipeId = eachRecipe.id;
-                console.log(recipeId);
+                    //Make ajax call with new end point with recipeID and go deep into how to make that recipe.
 
-                //Make ajax call with new end point with recipeID and go deep into how to make that recipe.
-            }
-        )}
+                    $.ajax({
+                        url: `https://api.spoonacular.com/recipes/${recipeId}/information`,
+                        method: 'GET',
+                        dataType: 'json',
+                        data: {
+                            apiKey: recipeApp.key,
+                            id: `${recipeId}`
+                        }
+                    }).then(function (eachInfo) {
+                        console.log('Worked our ID', eachInfo);
+                        const recipeInstruction = eachInfo.sourceUrl;
+
+                    })
+                });
+        }
     });
-};
+}
 
-// ✨✨ FUNCTIONALITY INITIATION! ENGAGE!
+recipeApp.init = function () {
+    recipeApp.getrecipes();
 
-    // retrieve user input through the search box and pass as parameter
-    $('.searchBoxClass').on('submit', function (e) {
-        e.preventDefault();
-        const userInput = $('.inputBox').val();
-        console.log('userInput: ', userInput);
-
-        myApp.getInfo(userInput);
-        
-
-        // empty out the input for search once the string is collected. ✔
-        // $('#searchBox').empty();
-
-        // move from header to results section.
-        // $('html, body').animate({
-        //     scrollTop: $("section").offSet().top},
-        //     'slow');
-    });
+    // Function to get user input through the search box and pass that as an argument in the function recipeApp.getrecipes(ingredientInput);
+    $('.searchBoxClass').on('submit', function (event) {
+        event.preventDefault();
+        const ingredientInput = $('.inputBox').val();
+        // console.log(ingredientInput); 
+        recipeApp.getrecipes(ingredientInput);
+    })
+}
 
 
-myApp.init = function () {
-    console.log('app started');
-};    
-
-$(function(){
-    myApp.init();
-
-    
+// Recipe App Inititated on doc ready
+$(function () {
+    recipeApp.init();
 });
-
-$(document).ready(function(){
-    console.log('document is ready');
-})
-
-
-
