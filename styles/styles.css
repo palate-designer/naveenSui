@@ -275,7 +275,7 @@ h1 {
   font-size: calc(3rem + 5 * ((100vw - 360px) / 920));
   margin: 0;
   line-height: 10rem;
-  font-family: 'Ultra', serif;
+  font-family: 'Ultra', serif;
   text-shadow: 5px 5px 5px #172121;
 }
 
@@ -402,7 +402,7 @@ ul {
   text-decoration: none;
   list-style-type: none;
   line-height: 46px;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-size: calc(1.5rem + 1 * ((100vw - 360px) / 920));
 }
 
@@ -468,13 +468,17 @@ button {
 }
 
 header {
-  height: 107vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: url(../Assets/foodBowl2-edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 header nav {
@@ -628,6 +632,18 @@ main {
   height: 100vh;
 }
 
+.recipesHeader {
+  width: 100vw;
+  height: 7vh;
+}
+
+.recipesHeader h2 {
+  font-family: "Kanit", sans-serif;
+  font-size: calc(2.6rem + 0.5vw);
+  display: block;
+  margin: 5% 8%;
+}
+
 .recipesResults {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -644,18 +660,6 @@ main {
           align-items: center;
   height: 100vh;
   width: 100%;
-}
-
-.recipesResults .recipesHeader {
-  width: 100%;
-  height: 7vh;
-}
-
-.recipesResults h2 {
-  font-family: "Kanit", sans-serif;
-  font-size: calc(2.6rem + 0.5vw);
-  width: 100%;
-  display: block;
 }
 
 .recipesResults .results {
@@ -679,4 +683,3 @@ main {
   border: 1px solid grey;
   position: relative;
 }
-/*# sourceMappingURL=styles.css.map */
