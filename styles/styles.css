@@ -274,9 +274,10 @@ h1, h2, h3, h4, h5, a {
 h1 {
   font-size: calc(3rem + 5 * ((100vw - 360px) / 920));
   margin: 0;
-  line-height: 10rem;
-  font-family: 'Ultra', serif;
+  line-height: 5rem;
+  font-family: 'Ultra', serif;
   text-shadow: 5px 5px 5px #172121;
+  text-align: center;
 }
 
 @media screen and (max-width: 360px) {
@@ -380,7 +381,7 @@ h5 {
 
 p {
   font-family: 'Kanit', sans-serif;
-  font-size: calc(1.5rem + 1 * ((100vw - 360px) / 920));
+  font-size: calc(1.5rem + 0.5 * ((100vw - 360px) / 920));
   margin: 0;
   line-height: 4rem;
 }
@@ -393,7 +394,7 @@ p {
 
 @media screen and (min-width: 1280px) {
   p {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -402,7 +403,7 @@ ul {
   text-decoration: none;
   list-style-type: none;
   line-height: 46px;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-size: calc(1.5rem + 1 * ((100vw - 360px) / 920));
 }
 
@@ -479,7 +480,7 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: url(../Assets/foodBowl2-edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg);
+  background: url(./../../Assets/foodBowl2-edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -512,39 +513,9 @@ header nav h2 {
   margin-left: 2rem;
 }
 
-.headerGrid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(360px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
-  grid-auto-flow: dense;
-  height: 100%;
-  width: 100%;
-}
-
-.headerGrid .halfHeader {
-  height: 100%;
-  width: 100%;
-}
-
-.headerGrid .halfHeader img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-
-.headerGrid .halfHeader2 {
-  width: 50%;
-}
-
 .formBox {
   position: absolute;
-  top: 35%;
+  top: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -552,6 +523,9 @@ header nav h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 form {
@@ -610,42 +584,72 @@ input {
 
 .inputToolTip {
   width: 15vw;
+  min-width: 200px;
   text-align: center;
   background: #596157c9;
   color: white;
   border-radius: 1vw;
   position: relative;
-  top: -15vh;
-  left: -15vw;
+  top: -20vh;
+  right: -30vw;
   visibility: hidden;
 }
 
-.searchBoxClass:hover ~ .inputToolTip {
+.inputBox:hover ~ .inputToolTip {
   visibility: visible;
   z-index: 10;
   -webkit-transition: 3s all ease-in;
   transition: 3s all ease-in;
 }
 
-main {
-  height: 100vh;
-  background: url("../../Assets/sebastien-marchand-oVIUvwm2dvM-unsplash.jpg");
+.searchBoxButton:active {
+  -webkit-box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
+          box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
+}
+
+.radioFields {
+  width: 80vw;
+  background: rgba(255, 255, 255, 0.589);
+  border-radius: 2vw;
+}
+
+.radioFields .radioFieldSet {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  width: 80vw;
+}
+
+.radioFields .radioHouse {
+  width: 100%;
+}
+
+.radioFields .dietInput {
+  padding: 2%;
+  min-width: 145px;
+  font-family: 'Kanit', sans-serif;
+}
+
+.radioFields input[type='radio'] {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 main {
   height: 100vh;
-}
-
-.recipesHeader {
-  width: 100vw;
-  height: 7vh;
+  background: url(./../../Assets/lukas-blazek-f-TWhXOrLiU-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .recipesHeader h2 {
-  font-family: "Kanit", sans-serif;
-  font-size: calc(2.6rem + 0.5vw);
   display: block;
-  margin: 5% 8%;
+  width: 60vw;
+  padding: 2%;
 }
 
 .recipesResults {
@@ -668,6 +672,7 @@ main {
 
 .recipesResults .results {
   width: 100%;
+  margin: 5% 0;
 }
 
 .recipesResults .suggestedRecipes {
@@ -680,10 +685,27 @@ main {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .recipesResults .suggestedRecipes li {
   width: calc(100% / 5);
   border: 1px solid grey;
   position: relative;
+  min-width: 180px;
 }
+
+.recipesResults .suggestedRecipes li p {
+  font-style: italic;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #17212171;
+  width: 100%;
+  color: white;
+}
+/*# sourceMappingURL=styles.css.map */

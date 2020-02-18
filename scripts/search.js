@@ -1,6 +1,6 @@
 
 const recipeApp = {
-    key: 'baa233e2a8bc401a83b89ba0f32ef23c',
+    key: '279c2442197649fa90e84de120dfa672',
 };
 
 // Get recipes with user ingredients input (Whatever they have)
@@ -25,7 +25,7 @@ recipeApp.getrecipes = function (ingredientInput) {
                 // Used forEach function to go through each array and append into li
                 result.forEach(function (eachRecipe) {
                     // console.log(eachRecipe);
-                   
+
                     // Capturing ID of all the recipes in a variable and popping it in the link
                     const recipeId = eachRecipe.id;
                     console.log(recipeId);
@@ -67,6 +67,14 @@ recipeApp.init = function () {
         const ingredientInput = $('.inputBox').val();
         // console.log(ingredientInput); 
         recipeApp.getrecipes(ingredientInput);
+
+        // empty out the input for search once the string is collected. ✔
+        // $('#searchBox').empty();
+
+        // move from header to results section. ✔
+        $('html, body').animate({
+            scrollTop: $("main").offset().top},
+            'slow');
     })
 }
 
