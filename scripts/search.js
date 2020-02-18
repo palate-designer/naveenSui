@@ -2,6 +2,11 @@
 const recipeApp = {
     key: 'baa233e2a8bc401a83b89ba0f32ef23c',
 };
+//150 points perday
+// Sui's Key : baa233e2a8bc401a83b89ba0f32ef23c
+//Naveen's Key : e429c44d3e5e48beacacf5b14cc993a2
+//Naveen's Secondary Key : 0d411c50c97a49d5a155391721a6abea
+
 
 // Get recipes with user ingredients input (Whatever they have)
 recipeApp.getrecipes = function (ingredientInput) {
