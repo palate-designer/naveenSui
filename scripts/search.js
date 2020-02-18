@@ -1,7 +1,9 @@
 
 const recipeApp = {
-    key: 'e429c44d3e5e48beacacf5b14cc993a2',
+    key: '0d411c50c97a49d5a155391721a6abea',
 };
+
+recipeApp.userDiet = '';
 //150 points perday
 // Sui's Key : baa233e2a8bc401a83b89ba0f32ef23c
 //Sui's Secondary Key: 279c2442197649fa90e84de120dfa672
@@ -23,19 +25,19 @@ recipeApp.getrecipes = function (ingredientInput) {
             ingredients: ingredientInput
         }
     }).then(function (result) {
-        // console.log('input related all the recipies are here', result);
+        console.log('input related all the recipies are here', result);
 
         if (result == false) {
             // console.log('nothing to show');
         } else {
-            $('li').hide() &&
+            $('li').hide()
                 // Used forEach function to go through each array and append into li
                 result.forEach(function (eachRecipe) {
                     // console.log(eachRecipe);
 
                     // Capturing ID of all the recipes in a variable and popping it in the link
                     const recipeId = eachRecipe.id;
-                    console.log(recipeId);
+                    // console.log(recipeId);
 
                     //Make ajax call with new end point with recipeID and go deep into how to make that recipe.
                     //Ajax 2
@@ -48,21 +50,35 @@ recipeApp.getrecipes = function (ingredientInput) {
                             id: `${recipeId}`
                         }
                     }).then(function (eachInfo) {
-                        console.log('Worked our ID', eachInfo);
-                        const recipeInstruction = eachInfo.sourceUrl;
-                        const htmlToAppend = `
-                        <li>
-                            <a href="${recipeInstruction}" target="_blank">
-                            <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
-                            </a>
-                            <p>${eachRecipe.title}</p>
-                        </li>`
-                        $('ul.suggestedRecipes').append(htmlToAppend);
-                        
+                        console.log('Worked our ID', eachInfo.diets);
+                        if (eachInfo.diets.includes(recipeApp.userDiet)) {
+                            const recipeInstruction = eachInfo.sourceUrl;
+                            const htmlToAppend = `
+                                <li>
+                                    <a href="${recipeInstruction}" target="_blank">
+                                    <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
+                                    <p>${eachRecipe.title}</p>
+                                    </a>
+                                </li>`
+                            $('ul.suggestedRecipes').append(htmlToAppend);
+                        }else{
+
+                            const recipeInstruction = eachInfo.sourceUrl;
+                            const htmlToAppend = `
+                                <li>
+                                    <a href="${recipeInstruction}" target="_blank">
+                                    <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
+                                    <p>${eachRecipe.title}</p>
+                                    </a>
+                                </li>`
+                            $('ul.suggestedRecipes').append(htmlToAppend);
+                        }
+
                     })
                 });
         }
     });
+
 }
 
 recipeApp.init = function () {
@@ -73,9 +89,10 @@ recipeApp.init = function () {
         event.preventDefault();
         const ingredientInput = $('.inputBox').val();
         // console.log(ingredientInput); 
-        const dietButton = $('input[name="diet"]:checked').val();
-        console.log(dietButton);
-        
+        recipeApp.userDiet = $('input[name="diet"]:checked').val();
+        console.log(recipeApp.userDiet);
+        // console.log(dietButton);
+
         recipeApp.getrecipes(ingredientInput);
 
         // empty out the input for search once the string is collected. ✔
@@ -83,7 +100,8 @@ recipeApp.init = function () {
 
         // move from header to results section. ✔
         $('html, body').animate({
-            scrollTop: $("main").offset().top},
+            scrollTop: $("main").offset().top
+        },
             'slow');
     })
 }
