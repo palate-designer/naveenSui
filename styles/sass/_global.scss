@@ -39,11 +39,11 @@ h1, h2, h3, h4, h5, a {
 h1 {
     @include fluid-type (3rem,8rem, 360px, 1280px);
     margin: 0;
-    line-height: 10rem;
+    line-height: 5rem;
     font-family: 'Ultra',
     serif;
     text-shadow: 5px 5px 5px $charcoalBlack;
-
+    text-align: center;
 }
 
 h2 {
@@ -90,7 +90,7 @@ h5 {
 
 p { 
     font-family: 'Kanit', sans-serif;
-    @include fluid-type (1.5rem, 2.5rem, 360px, 1280px);
+    @include fluid-type (1.5rem, 2rem, 360px, 1280px);
     margin: 0;
     line-height: 4rem;
 }

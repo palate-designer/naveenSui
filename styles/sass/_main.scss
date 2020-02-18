@@ -1,19 +1,17 @@
 // styling for the results page
 main {
     height: 100vh;
-    
+    background: url(./../../Assets/lukas-blazek-f-TWhXOrLiU-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.recipesHeader {
-    width: 100vw;
-    height: 7vh;
+.recipesHeader h2 {
+    display: block;
+    width: 60vw;
+    padding: 2%;
 
-    h2 {
-        font-family: "Kanit", sans-serif;
-        font-size: calc(2.6rem + 0.5vw);
-        display: block;
-        margin: 5% 8%;
-    }
 }
 
 .recipesResults {
@@ -27,31 +25,34 @@ main {
 
     .results {
         width: 100%;
+        margin: 5% 0;
     }
 
     .suggestedRecipes {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-
+        justify-content: space-around;
 
         li {
             width: calc(100% / 5);
             border: 1px solid grey;
             position: relative;
+            min-width: 180px;
 
-            // p {
-            //     font-family: "Kanit", sans-serif;
-            //     font-size: calc(1.2rem + 0.5vw);
-            //     font-style: italic;
-            //     text-align: center;
-            //     position: absolute;
-            //     left: 50%;
-            //     top: 50%;
-            //     transform: translate(-50%, -50%);
-            //     background-color: rgba(255, 224, 26, 0.5);
-            //     width: 100%;
-            // }
+            p {
+                // font-family: "Kanit", sans-serif;
+                // font-size: calc(1.2rem + 0.5vw);
+                font-style: italic;
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #17212171;
+                width: 100%;
+                color: white;
+            }
         }
     }
 }
