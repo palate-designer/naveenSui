@@ -103,7 +103,7 @@ input {
     width: 80vw;
     background: rgba(255, 255, 255, 0.589);
     border-radius: 2vw;
-    margin: 0 auto;
+    margin: 2% 1%;
 
     .radioFieldSet {
         display: grid;
@@ -114,6 +114,8 @@ input {
 
     .radioHouse {
         width: 100%;
+        padding-top: 1%;
+        padding-bottom: 1%;
     }
 
     .dietInput {
@@ -124,6 +126,6 @@ input {
     }
 
     input[type='radio'] {
-        transform: scale(1.5);
+        transform: scale(1.25);
     }
 }
