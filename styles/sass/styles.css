@@ -27,13 +27,13 @@ figure {
 
 hr {
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
 pre {
-  font-family: monospace, monospace;
+  font-family: monospace,monospace;
   font-size: 1em;
 }
 
@@ -46,7 +46,7 @@ abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 b, strong {
@@ -58,7 +58,7 @@ b, strong {
 }
 
 code, kbd, samp {
-  font-family: monospace, monospace;
+  font-family: monospace,monospace;
   font-size: 1em;
 }
 
@@ -141,7 +141,7 @@ fieldset {
 
 legend {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -160,7 +160,7 @@ textarea {
 
 [type=checkbox], [type=radio] {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -218,7 +218,7 @@ html {
 
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .sr-only {
@@ -230,13 +230,12 @@ html {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
 
 /****** GENERAL STYLING ******/
-
 * {
   margin: 0;
   padding: 0;
@@ -260,7 +259,6 @@ body {
 }
 
 /* FONT STYLING */
-
 h1, h2, h3, h4, p, a, li, ul {
   line-height: 26px;
 }
@@ -277,7 +275,7 @@ h1 {
   font-size: calc(3rem + 5 * ((100vw - 360px) / 920));
   margin: 0;
   line-height: 5rem;
-  font-family: 'Ultra', serif;
+  font-family: 'Ultra', serif;
   text-shadow: 5px 5px 5px #172121;
   text-align: center;
 }
@@ -400,22 +398,25 @@ p {
   }
 }
 
-li, ul {
+li,
+ul {
   text-decoration: none;
   list-style-type: none;
   line-height: 46px;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-size: calc(1.5rem + 1 * ((100vw - 360px) / 920));
 }
 
 @media screen and (max-width: 360px) {
-  li, ul {
+  li,
+  ul {
     font-size: 1.5rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  li, ul {
+  li,
+  ul {
     font-size: 2.5rem;
   }
 }
@@ -474,11 +475,11 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: url(./../../Assets/foodBowl2-edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg);
   background-size: cover;
   background-position: center;
@@ -493,11 +494,11 @@ header nav {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #ffe01b;
   z-index: 10;
 }
@@ -520,11 +521,11 @@ header nav h2 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 form {
@@ -549,11 +550,11 @@ form fieldset {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 form #searchBox {
@@ -562,7 +563,7 @@ form #searchBox {
   width: 100%;
   border-radius: 5vw;
   -webkit-box-shadow: 5px 5px 5px #172121;
-  box-shadow: 5px 5px 5px #172121;
+          box-shadow: 5px 5px 5px #172121;
   display: block;
 }
 
@@ -572,7 +573,7 @@ form .searchBoxButton {
   border-radius: 5vw;
   height: 5rem;
   -webkit-box-shadow: 5px 5px 5px #172121;
-  box-shadow: 5px 5px 5px #172121;
+          box-shadow: 5px 5px 5px #172121;
   display: block;
 }
 
@@ -594,7 +595,7 @@ input {
   visibility: hidden;
 }
 
-.inputBox:hover~.inputToolTip {
+.inputBox:hover ~ .inputToolTip {
   visibility: visible;
   z-index: 10;
   -webkit-transition: 3s all ease-in;
@@ -602,8 +603,8 @@ input {
 }
 
 .searchBoxButton:active {
-  -webkit-box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
-  box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
+  -webkit-box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
+          box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
 }
 
 .radioFields {
@@ -617,9 +618,9 @@ input {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  -ms-grid-rows: (2, 1fr)[auto-fit];
-  grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
   width: 80vw;
 }
 
@@ -630,12 +631,12 @@ input {
 .radioFields .dietInput {
   padding: 2%;
   min-width: 145px;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .radioFields input[type='radio'] {
   -webkit-transform: scale(1.5);
-  transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 main {
@@ -658,14 +659,14 @@ main {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh;
   width: 100%;
 }
@@ -681,12 +682,12 @@ main {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
 }
 
 .recipesResults .suggestedRecipes li {
@@ -703,8 +704,9 @@ main {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: #17212171;
   width: 100%;
   color: white;
 }
+/*# sourceMappingURL=styles.css.map */

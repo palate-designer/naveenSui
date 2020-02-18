@@ -275,7 +275,7 @@ h1 {
   font-size: calc(3rem + 5 * ((100vw - 360px) / 920));
   margin: 0;
   line-height: 5rem;
-  font-family: 'Ultra', serif;
+  font-family: 'Ultra', serif;
   text-shadow: 5px 5px 5px #172121;
   text-align: center;
 }
@@ -403,7 +403,7 @@ ul {
   text-decoration: none;
   list-style-type: none;
   line-height: 46px;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-size: calc(1.5rem + 1 * ((100vw - 360px) / 920));
 }
 
@@ -603,8 +603,8 @@ input {
 }
 
 .searchBoxButton:active {
-  -webkit-box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
-          box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
+  -webkit-box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
+          box-shadow: inset 5px 5px 5px #6e2602, inset 5px -5px 5px #6e2602, inset -5px 5px 5px #6e2602, inset -5px -5px 5px #6e2602;
 }
 
 .radioFields {
@@ -631,7 +631,7 @@ input {
 .radioFields .dietInput {
   padding: 2%;
   min-width: 145px;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }
 
 .radioFields input[type='radio'] {
@@ -709,3 +709,4 @@ main {
   width: 100%;
   color: white;
 }
+/*# sourceMappingURL=styles.css.map */
