@@ -5,6 +5,7 @@ const recipeApp = {
 //150 points perday
 // Sui's Key : baa233e2a8bc401a83b89ba0f32ef23c
 //Sui's Secondary Key: 279c2442197649fa90e84de120dfa672
+//Sui's Third Key : ffbaefcb24f942e3b26825d47ad292b0
 //Naveen's Key : e429c44d3e5e48beacacf5b14cc993a2
 //Naveen's Secondary Key : 0d411c50c97a49d5a155391721a6abea
 
@@ -72,6 +73,9 @@ recipeApp.init = function () {
         event.preventDefault();
         const ingredientInput = $('.inputBox').val();
         // console.log(ingredientInput); 
+        const dietButton = $('input[name="diet"]:checked').val();
+        console.log(dietButton);
+        
         recipeApp.getrecipes(ingredientInput);
 
         // empty out the input for search once the string is collected. ✔
