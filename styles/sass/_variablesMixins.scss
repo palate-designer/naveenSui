@@ -1,0 +1,57 @@
+// ○○○ Variables
+$charcoalBlack: #172121;
+$lightGrey: #c1bfb5;
+$midGrey: #596157;
+$orange: #d74e09;
+$yellow: #ffe01b;
+
+
+// ○○○ mixins
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin box ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin shift($x, $y) {
+    transform: translate($x, $y);
+}
+
+@mixin header {
+    header {
+        display: flex;
+        text-align: center;
+    }
+
+    .headerDiv {
+        @include flexCenter;
+        flex-direction: column;
+    }
+}
+
+@mixin max-width($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+// Taken from @site https://codepen.io/dbox/pen/meaMba (Mixin Fluid Type)
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 900px) {
+
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ((100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+    @media screen and (max-width: $lower-range) {
+        font-size: $min-font-size;
+    }
+
+    @media screen and (min-width: $upper-range) {
+        font-size: $max-font-size;
+    }
+}
+
