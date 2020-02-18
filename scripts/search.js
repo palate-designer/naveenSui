@@ -26,7 +26,6 @@ recipeApp.getrecipes = function (ingredientInput) {
                 result.forEach(function (eachRecipe) {
                     // console.log(eachRecipe);
                    
-
                     // Capturing ID of all the recipes in a variable and popping it in the link
                     const recipeId = eachRecipe.id;
                     console.log(recipeId);
