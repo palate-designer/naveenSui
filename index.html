@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Link favicon -->
-        <link rel="icon" href="./Assets/favicon.ico" type="image/gif">
+    <!-- Link favicon -->
+    <link rel="icon" href="./Assets/favicon.ico" type="image/gif">
 
-        <!-- Kit from Font Awesome -->
-        <script src="https://kit.fontawesome.com/dfdc9c622d.js" crossorigin="anonymous"></script>
-    
-        <!-- Google Font Script -->
-        <link href="https://fonts.googleapis.com/css?family=Kanit|Ultra&display=swap" rel="stylesheet">
+    <!-- Kit from Font Awesome -->
+    <script src="https://kit.fontawesome.com/dfdc9c622d.js" crossorigin="anonymous"></script>
 
-        <!-- font-family: 'Ultra', serif;
+    <!-- Google Font Script -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit|Ultra&display=swap" rel="stylesheet">
+
+    <!-- font-family: 'Ultra', serif;
         font-family: 'Kanit', sans-serif; -->
 
-    
-        <!-- link style sheet -->
-        <link rel="stylesheet" type="text/css" href="./styles/sass/styles.css">
+
+    <!-- link style sheet -->
+    <link rel="stylesheet" type="text/css" href="./styles/sass/styles.css">
 
     <title>•• Palate Designer ••</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -37,17 +39,17 @@
                 <Fieldset>
                     <label for="searchBox" class="visually-hidden">Search by Ingredients</label>
                     <input type="text" id="searchBox" placeholder="&#32;&#32;search by ingredient..." class="inputBox">
-                    <button type= "submit" class = "searchBoxButton">Choose Your Ingredients</button>
+                    <button type="submit" class="searchBoxButton">Choose Your Ingredients</button>
                     <div class="inputToolTip">
                         <p>eg. spaghetti, meatballs, garlic...etc.</p>
                     </div>
                 </Fieldset>
                 <!-- input radio input fields for dietary restrictions -->
                 <div class="radioFields">
-                    <fieldset class= "radioFieldSet">
+                    <fieldset class="radioFieldSet">
                         <div class="radioHouse">
                             <input type="radio" id="glutenFree" name="glutenFree" value="glutenFree">
-                            <label class= "dietInput" for="glutenFree">Gluten Free</label>
+                            <label class="dietInput" for="glutenFree">Gluten Free</label>
                         </div>
 
                         <div class="radioHouse">
@@ -55,7 +57,7 @@
                             <label class="dietInput" for="ketogenic">Ketogenic</label>
 
                         </div>
-    
+
                         <div class="radioHouse">
                             <input type="radio" id="vegetarian" name="vegetarian" value="vegetarian">
                             <label class="dietInput" for="vegetarian">Vegetarian</label>
@@ -65,7 +67,7 @@
                             <input type="radio" id="lactoVegetarian" name="lactoVegetarian" value="lactoVegetarian">
                             <label class="dietInput" for="lactoVegetarian">Lacto-Vegetarian</label>
                         </div>
-                        
+
                         <div class="radioHouse">
                             <input type="radio" id="ovoVegetarian" name="ovoVegetarian" value="ovoVegetarian">
                             <label class="dietInput" for="ovoVegetarian">Ovo-Vegetarian</label>
@@ -75,17 +77,17 @@
                             <input type="radio" id="vegan" name="vegan" value="vegan">
                             <label class="dietInput" for="vegan">Vegan</label>
                         </div>
-    
+
                         <div class="radioHouse">
                             <input type="radio" id="pescetarian" name="pescetarian" value="pescetarian">
                             <label class="dietInput" for="pescetarian">Pescetarian</label>
                         </div>
-                        
+
                         <div class="radioHouse">
                             <input type="radio" id="paleo" name="paleo" value="paleo">
                             <label class="dietInput" for="paleo">Paleo</label>
                         </div>
-                        
+
                         <div class="radioHouse">
                             <input type="radio" id="primal" name="primal" value="primal">
                             <label class="dietInput" for="primal">Primal</label>
@@ -100,18 +102,18 @@
                 </div>
             </form>
         </div>
-        
+
     </header>
 
     <main>
         <div class="wrapper">
 
-            
+
             <div class="recipesResults">
                 <div class="resultHeader">
                     <h2>Suggested Recipes</h2>
                 </div>
-                <div class = "results">
+                <div class="results">
                     <ul class="suggestedRecipes">
                         <li>
                             <a href=""><img src="./Assets/logo.png" alt=""></a>
@@ -130,9 +132,11 @@
             </div>
         </div>
     </main>
-    
-    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'
+        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
     <script src="./scripts/search.js"></script>
 
 </body>
+
 </html>
