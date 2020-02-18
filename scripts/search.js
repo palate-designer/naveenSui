@@ -1,9 +1,10 @@
 
 const recipeApp = {
-    key: '279c2442197649fa90e84de120dfa672',
+    key: 'e429c44d3e5e48beacacf5b14cc993a2',
 };
 //150 points perday
 // Sui's Key : baa233e2a8bc401a83b89ba0f32ef23c
+//Sui's Secondary Key: 279c2442197649fa90e84de120dfa672
 //Naveen's Key : e429c44d3e5e48beacacf5b14cc993a2
 //Naveen's Secondary Key : 0d411c50c97a49d5a155391721a6abea
 
