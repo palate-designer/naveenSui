@@ -50,7 +50,18 @@ recipeApp.getrecipes = function (ingredientInput) {
                     }
                 }).then(function (eachInfo) {
                     console.log('Worked our ID', eachInfo.diets);
-                    if (eachInfo.diets.includes(recipeApp.userDiet)) {
+
+                    if (!recipeApp.userDiet) {
+                        const recipeInstruction = eachInfo.sourceUrl;
+                        const htmlToAppend = `
+                                <li>
+                                    <a href="${recipeInstruction}" target="_blank">
+                                    <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
+                                    <p>${eachRecipe.title}</p>
+                                    </a>
+                                </li>`
+                        $('ul.suggestedRecipes').append(htmlToAppend);
+                    } else if (eachInfo.diets.includes(recipeApp.userDiet)) {
                         const recipeInstruction = eachInfo.sourceUrl;
                         const htmlToAppend = `
                                 <li>
@@ -61,16 +72,7 @@ recipeApp.getrecipes = function (ingredientInput) {
                                 </li>`
                         $('ul.suggestedRecipes').append(htmlToAppend);
                     } else {
-
-                        const recipeInstruction = eachInfo.sourceUrl;
-                        const htmlToAppend = `
-                                <li>
-                                    <a href="${recipeInstruction}" target="_blank">
-                                    <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
-                                    <p>${eachRecipe.title}</p>
-                                    </a>
-                                </li>`
-                        $('ul.suggestedRecipes').append(htmlToAppend);
+                        alert('Sorry there are no results for your search, please try again!');
                     }
 
                 })
