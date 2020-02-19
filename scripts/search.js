@@ -1,11 +1,10 @@
-
 const recipeApp = {
-    key: '4353492c4b7149afad70ff5807b873d5 ',
+    key: '4353492c4b7149afad70ff5807b873d5',
 };
 
 recipeApp.userDiet = '';
 //150 points perday
-// Sui's Key : 6d9ca80e7212420295a0980e3c5dccca
+// Sui's Key : baa233e2a8bc401a83b89ba0f32ef23c
 //Sui's Secondary Key: 279c2442197649fa90e84de120dfa672
 //Sui's Third Key : ffbaefcb24f942e3b26825d47ad292b0
 //Naveen's Key : e429c44d3e5e48beacacf5b14cc993a2
@@ -25,57 +24,57 @@ recipeApp.getrecipes = function (ingredientInput) {
             ingredients: ingredientInput
         }
     }).then(function (result) {
-        console.log('input related all the recipes are here', result);
+        console.log('input related all the recipies are here', result);
 
         if (result == false) {
             // console.log('nothing to show');
         } else {
             $('li').hide()
-                // Used forEach function to go through each array and append into li
-                result.forEach(function (eachRecipe) {
-                    // console.log(eachRecipe);
+            // Used forEach function to go through each array and append into li
+            result.forEach(function (eachRecipe) {
+                // console.log(eachRecipe);
 
-                    // Capturing ID of all the recipes in a variable and popping it in the link
-                    const recipeId = eachRecipe.id;
-                    // console.log(recipeId);
+                // Capturing ID of all the recipes in a variable and popping it in the link
+                const recipeId = eachRecipe.id;
+                // console.log(recipeId);
 
-                    //Make ajax call with new end point with recipeID and go deep into how to make that recipe.
-                    //Ajax 2
-                    $.ajax({
-                        url: `https://api.spoonacular.com/recipes/${recipeId}/information`,
-                        method: 'GET',
-                        dataType: 'json',
-                        data: {
-                            apiKey: recipeApp.key,
-                            id: `${recipeId}`
-                        }
-                    }).then(function (eachInfo) {
-                        console.log('Worked our ID', eachInfo.diets);
-                        if (eachInfo.diets.includes(recipeApp.userDiet)) {
-                            const recipeInstruction = eachInfo.sourceUrl;
-                            const htmlToAppend = `
+                //Make ajax call with new end point with recipeID and go deep into how to make that recipe.
+                //Ajax 2
+                $.ajax({
+                    url: `https://api.spoonacular.com/recipes/${recipeId}/information`,
+                    method: 'GET',
+                    dataType: 'json',
+                    data: {
+                        apiKey: recipeApp.key,
+                        id: `${recipeId}`
+                    }
+                }).then(function (eachInfo) {
+                    console.log('Worked our ID', eachInfo.diets);
+                    if (eachInfo.diets.includes(recipeApp.userDiet)) {
+                        const recipeInstruction = eachInfo.sourceUrl;
+                        const htmlToAppend = `
                                 <li>
                                     <a href="${recipeInstruction}" target="_blank">
                                     <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
                                     <p>${eachRecipe.title}</p>
                                     </a>
                                 </li>`
-                            $('ul.suggestedRecipes').append(htmlToAppend);
-                        }else{
+                        $('ul.suggestedRecipes').append(htmlToAppend);
+                    } else {
 
-                            const recipeInstruction = eachInfo.sourceUrl;
-                            const htmlToAppend = `
+                        const recipeInstruction = eachInfo.sourceUrl;
+                        const htmlToAppend = `
                                 <li>
                                     <a href="${recipeInstruction}" target="_blank">
                                     <img src="${eachRecipe.image}" alt="${eachRecipe.title}">
                                     <p>${eachRecipe.title}</p>
                                     </a>
                                 </li>`
-                            $('ul.suggestedRecipes').append(htmlToAppend);
-                        }
+                        $('ul.suggestedRecipes').append(htmlToAppend);
+                    }
 
-                    })
-                });
+                })
+            });
         }
     });
 
@@ -106,7 +105,7 @@ recipeApp.init = function () {
     })
 }
 
-$('.reloadAll').on('click', function(e){
+$('.reloadAll').on('click', function (e) {
     e.preventDefault();
     location.reload(true);
 })
