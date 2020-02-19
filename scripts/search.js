@@ -1,6 +1,6 @@
 
 const recipeApp = {
-    key: '6d9ca80e7212420295a0980e3c5dccca',
+    key: '4353492c4b7149afad70ff5807b873d5 ',
 };
 
 recipeApp.userDiet = '';
