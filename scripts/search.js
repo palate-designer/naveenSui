@@ -1,5 +1,5 @@
 const recipeApp = {
-    key: 'e429c44d3e5e48beacacf5b14cc993a2',
+    key: 'ffbaefcb24f942e3b26825d47ad292b0',
 };
 
 recipeApp.userDiet = '';
@@ -100,7 +100,7 @@ recipeApp.init = function () {
     $('.searchBoxClass').on('submit', function (event) {
         event.preventDefault();
         const ingredientInput = $('.inputBox').val();
-        // console.log(ingredientInput); 
+        console.log(ingredientInput); 
         recipeApp.userDiet = $('input[name="diet"]:checked').val();
         console.log(recipeApp.userDiet);
         // console.log(dietButton);
