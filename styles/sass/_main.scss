@@ -1,10 +1,13 @@
 // styling for the results page
 main {
-    height: 100vh;
+    height: 120vh;
     background: url(../Assets/lukas-blazek-f-TWhXOrLiU-unsplash-compressor.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .recipesHeader h2 {

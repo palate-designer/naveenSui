@@ -1,5 +1,5 @@
 const recipeApp = {
-    key: 'ffbaefcb24f942e3b26825d47ad292b0',
+    key: 'e429c44d3e5e48beacacf5b14cc993a2',
 };
 
 recipeApp.userDiet = '';
@@ -78,11 +78,9 @@ recipeApp.getrecipes = function (ingredientInput) {
                         if (!alerted) {
                             alerted = true;
                             // alert("Damnnnn !! We Rock");
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Oops...',
-                                text: 'Hey! Your choice is inappropriate',
-                            })
+
+                            swal("Sorry!", "Your selection didn't bring up any results! Please try again!", "error");
+                            
                         }
                     }
 
@@ -127,4 +125,5 @@ $('.reloadAll').on('click', function (e) {
 // Recipe App Inititated on doc ready
 $(function () {
     recipeApp.init();
+
 });

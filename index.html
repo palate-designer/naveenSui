@@ -11,10 +11,7 @@
     <!-- Kit from Font Awesome -->
     <script src="https://kit.fontawesome.com/dfdc9c622d.js" crossorigin="anonymous"></script>
 
-    <!-- Sweet Alert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-    <!-- Google Font Script -->
+        <!-- Google Font Script -->
     <link href="https://fonts.googleapis.com/css?family=Kanit|Ultra&display=swap" rel="stylesheet">
 
     <!-- font-family: 'Ultra', serif;
@@ -36,79 +33,86 @@
             </div>
         </nav>
 
-        <div class="formBox">
+        <div class = "headerStyling">
             <h1> Palate Designer</h1>
-            <form class="searchBoxClass">
-                <Fieldset>
-                    <label for="searchBox" class="visually-hidden">Search by Ingredients</label>
-                    <input type="text" id="searchBox" placeholder="&#32;&#32;search by ingredient..." class="inputBox" required>
-
-                    <div class="radioFields">
-                                        <fieldset class="radioFieldSet">
-                                            <div class="radioHouse">
-                                                <input type="radio" id="glutenFree" name="diet" value="gluten free">
-                                                <label class="dietInput" for="glutenFree">Gluten Free</label>
+            <div class="formBox">
+                <form class="searchBoxClass">
+                    <Fieldset class= "inPutFieldset">
+                        
+                        <h3>Enter Ingredient(s)!</h3>
+                        <label for="searchBox" class="visually-hidden">Search by Ingredients</label>
+                        
+                        <input type="text" id="searchBox" placeholder="&#32;&#32;search by ingredient eg. spaghetti, meatball, garlic...etc. Singular only!" class="inputBox" data-tooltip="eg. spaghetti, meatball, garlic...etc. Singular only!"
+                            required>
+                        
+                        <h3>Optional: Do You Have A Dietary Restriction?</h3>
+                        <div class="radioFields">
+                                            <div class="radioFieldSet">
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="glutenFree" name="diet" value="gluten free">
+                                                    <label class="dietInput" for="glutenFree">Gluten Free</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="ketogenic" name="diet" value="ketogenic">
+                                                    <label class="dietInput" for="ketogenic">Ketogenic</label>
+    
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="vegetarian" name="diet" value="vegetarian">
+                                                    <label class="dietInput" for="vegetarian">Vegetarian</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="lactoVegetarian" name="diet"
+                                                        value="lacto vegetarian">
+                                                    <label class="dietInput" for="lactoVegetarian">Lacto-Vegetarian</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="ovoVegetarian" name="diet"
+                                                        value="ovo vegetarian">
+                                                    <label class="dietInput" for="ovoVegetarian">Ovo-Vegetarian</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="vegan" name="diet" value="vegan">
+                                                    <label class="dietInput" for="vegan">Vegan</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="pescetarian" name="diet" value="pescetarian">
+                                                    <label class="dietInput" for="pescetarian">Pescetarian</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="paleo" name="diet" value="paleo">
+                                                    <label class="dietInput" for="paleo">Paleo</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="primal" name="diet" value="primal">
+                                                    <label class="dietInput" for="primal">Primal</label>
+                                                </div>
+    
+                                                <div class="radioHouse">
+                                                    <input type="radio" id="whole30" name="diet" value="whole30">
+                                                    <label class="dietInput" for="whole30">Whole30</label>
+                                                </div>
                                             </div>
+    
+                                        </div>
+    
+                        <button type="submit" class="searchBoxButton">Choose Your Ingredients</button>
 
-                                            <div class="radioHouse">
-                                                <input type="radio" id="ketogenic" name="diet" value="ketogenic">
-                                                <label class="dietInput" for="ketogenic">Ketogenic</label>
+                        
 
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="vegetarian" name="diet" value="vegetarian">
-                                                <label class="dietInput" for="vegetarian">Vegetarian</label>
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="lactoVegetarian" name="diet"
-                                                    value="lacto vegetarian">
-                                                <label class="dietInput" for="lactoVegetarian">Lacto-Vegetarian</label>
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="ovoVegetarian" name="diet"
-                                                    value="ovo vegetarian">
-                                                <label class="dietInput" for="ovoVegetarian">Ovo-Vegetarian</label>
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="vegan" name="diet" value="vegan">
-                                                <label class="dietInput" for="vegan">Vegan</label>
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="pescetarian" name="diet" value="pescetarian">
-                                                <label class="dietInput" for="pescetarian">Pescetarian</label>
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="paleo" name="diet" value="paleo">
-                                                <label class="dietInput" for="paleo">Paleo</label>
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="primal" name="diet" value="primal">
-                                                <label class="dietInput" for="primal">Primal</label>
-                                            </div>
-
-                                            <div class="radioHouse">
-                                                <input type="radio" id="whole30" name="diet" value="whole30">
-                                                <label class="dietInput" for="whole30">Whole30</label>
-                                            </div>
-                                        </fieldset>
-
-                                    </div>
-
-                    <button type="submit" class="searchBoxButton">Choose Your Ingredients</button>
-                    <div class="inputToolTip">
-                        <p>eg. spaghetti, meatball, garlic...etc. Singular only!</p>
-                    </div>
-                </Fieldset>
-                <!-- input radio input fields for dietary restrictions -->
-                
-            </form>
+                    </Fieldset>
+                    <!-- input radio input fields for dietary restrictions -->
+                    
+                </form>
+            </div>
         </div>
 
     </header>
@@ -148,6 +152,9 @@
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'
         integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
     <script src="./scripts/search.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 

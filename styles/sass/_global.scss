@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, a {
 }
 
 h1 {
-    @include fluid-type (3rem,8rem, 360px, 1280px);
+    @include fluid-type (2.5rem,8rem, 360px, 1280px);
     margin: 0;
     line-height: 5rem;
     font-family: 'Ultra',
@@ -65,7 +65,12 @@ h3 {
     display: block;
     width: 100%;
     line-height: 4rem;
-    color: black;
+    color: white;
+    font-family: 'Kanit',
+    sans-serif;
+    text-shadow: 5px 5px 5px $charcoalBlack;
+    padding-left: 2%;
+    display: inline-block;
 }
 
 h4 {

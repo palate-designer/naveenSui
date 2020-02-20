@@ -1,9 +1,9 @@
 
 header {
-    height: 100vh;
+    height: 105vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     background: url(../Assets/foodBowl2-edgar-castrejon-1SPu0KT-Ejg-unsplash-compressor.jpg);
     background-size: cover;
     background-position: center;
@@ -11,18 +11,19 @@ header {
     
     nav {
         width: 100vw;
-        height: 7vh;
-        position: fixed;
+        height: 10vh;
+        // position: sticky;
+        // top: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background: $yellow;
-        z-index: 10;
 
         .logo {
             width: 12vw;
             margin-right: 2rem;
             margin-left: 2rem;
+            min-width: 10rem;
         }
 
         h2 {
@@ -31,21 +32,35 @@ header {
     }
 }
 
-.formBox {
-    position: absolute;
-    top: 25%;
+.headerStyling {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.466);
+
+    h1 {
+        // margin-bottom: 0.5%;
+    }
+}
+
+.formBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
     @include fluid-type (1.5rem, 2.8rem, 360px, 1280px);
+    margin: 3%;
 
-    fieldset {
+    .inPutFieldset {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 1%;
     }
 
     #searchBox {
@@ -80,8 +95,8 @@ input {
     color: white;
     border-radius: 1vw;
     position: relative;
-    top: -20vh;
-    right: -30vw;
+    top: -30rem;
+    right: -40rem;
     visibility: hidden;
 }
 
@@ -98,10 +113,11 @@ input {
 
 // styling for the dietary restrictions section
 .radioFields {
-    width: 80vw;
+    width: 100%;
     background: rgba(255, 255, 255, 0.589);
     border-radius: 2vw;
     margin: 2% 1%;
+    padding: 2%;
 
     .radioFieldSet {
         display: grid;
