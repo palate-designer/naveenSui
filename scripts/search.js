@@ -1,5 +1,5 @@
 const recipeApp = {
-    key: '4353492c4b7149afad70ff5807b873d5',
+    key: 'e429c44d3e5e48beacacf5b14cc993a2',
 };
 
 recipeApp.userDiet = '';
@@ -31,6 +31,9 @@ recipeApp.getrecipes = function (ingredientInput) {
         } else {
             $('li').hide()
             // Used forEach function to go through each array and append into li
+            //Setting alert to false before foreach in its default state
+            let alerted = false;
+
             result.forEach(function (eachRecipe) {
                 // console.log(eachRecipe);
 
@@ -72,7 +75,15 @@ recipeApp.getrecipes = function (ingredientInput) {
                                 </li>`
                         $('ul.suggestedRecipes').append(htmlToAppend);
                     } else {
-                        alert('Sorry there are no results for your search, please try again!');
+                        if (!alerted) {
+                            alerted = true;
+                            // alert("Damnnnn !! We Rock");
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Hey! Your choice is inappropriate',
+                            })
+                        }
                     }
 
                 })
