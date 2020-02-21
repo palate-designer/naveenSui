@@ -494,6 +494,9 @@ header {
 header nav {
   width: 100vw;
   height: 10vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
