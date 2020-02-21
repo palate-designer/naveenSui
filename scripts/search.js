@@ -1,5 +1,5 @@
 const recipeApp = {
-    key: 'a8e92198263545bcb214ec6e78a03c7f',
+    key: '0d411c50c97a49d5a155391721a6abea',
 };
 
 recipeApp.userDiet = '';
