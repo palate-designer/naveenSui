@@ -488,6 +488,7 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 header nav {
@@ -667,7 +668,6 @@ input {
 }
 
 main {
-  height: 120vh;
   background: url(../Assets/lukas-blazek-f-TWhXOrLiU-unsplash-compressor.jpg);
   background-size: cover;
   background-position: center;
@@ -682,6 +682,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: auto;
 }
 
 .recipesHeader h2 {
@@ -704,8 +705,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
   width: 100%;
+  padding: 15%;
 }
 
 .recipesResults .results {
@@ -768,3 +769,4 @@ main {
   -webkit-box-shadow: 2px 2px 2px #172121;
           box-shadow: 2px 2px 2px #172121;
 }
+/*# sourceMappingURL=styles.css.map */
