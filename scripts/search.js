@@ -16,7 +16,7 @@ recipeApp.userDiet = '';
 // Get recipes with user ingredients input (Whatever they have)
 recipeApp.getrecipes = function (ingredientInput) {
 
-    // Ajax request 1
+    // Ajax request 1 [will retrieve IDs needed for recipe info]
     $.ajax({
         url: `https://api.spoonacular.com/recipes/findByIngredients`,
         method: 'GET',
@@ -26,10 +26,8 @@ recipeApp.getrecipes = function (ingredientInput) {
             ingredients: ingredientInput
         }
     }).then(function (result) {
-        console.log('input related all the recipies are here', result);
 
         if (result == false) {
-            // console.log('nothing to show');
         } else {
             $('li').hide()
             // Used forEach function to go through each array and append into li
@@ -37,13 +35,11 @@ recipeApp.getrecipes = function (ingredientInput) {
             let alerted = false;
 
             result.forEach(function (eachRecipe) {
-                // console.log(eachRecipe);
 
                 // Capturing ID of all the recipes in a variable and popping it in the link
                 const recipeId = eachRecipe.id;
-                // console.log(recipeId);
 
-                //Make ajax call with new end point with recipeID and go deep into how to make that recipe.
+                //Make ajax call with new end point with recipeID to gain recipe info on url, dietary restrictions, instructions and etc..
                 //Ajax 2
                 $.ajax({
                     url: `https://api.spoonacular.com/recipes/${recipeId}/information`,
@@ -54,8 +50,8 @@ recipeApp.getrecipes = function (ingredientInput) {
                         id: `${recipeId}`
                     }
                 }).then(function (eachInfo) {
-                    console.log('Worked our ID', eachInfo.diets);
 
+                    // if dietary restrictions have no input, run search without.
                     if (!recipeApp.userDiet) {
                         const recipeInstruction = eachInfo.sourceUrl;
                         const htmlToAppend = `
@@ -67,6 +63,7 @@ recipeApp.getrecipes = function (ingredientInput) {
                                 </li>`
                         $('ul.suggestedRecipes').append(htmlToAppend);
                     } else if (eachInfo.diets.includes(recipeApp.userDiet)) {
+                        // if dietary restrictions selected, check against input value to match diets array input value in API
                         const recipeInstruction = eachInfo.sourceUrl;
                         const htmlToAppend = `
                                 <li>
@@ -78,6 +75,7 @@ recipeApp.getrecipes = function (ingredientInput) {
                         $('ul.suggestedRecipes').append(htmlToAppend);
                     } else {
                         if (!alerted) {
+                            // if no results come from both ingredient and dietary restriction input, then switch on first alert to true, and send alert. No other alerts should come up.
                             alerted = true;
                             // alert("Damnnnn !! We Rock");
 
@@ -99,16 +97,12 @@ recipeApp.init = function () {
     // Function to get user input through the search box and pass that as an argument in the function recipeApp.getrecipes(ingredientInput);
     $('.searchBoxClass').on('submit', function (event) {
         event.preventDefault();
+        // on form submit, take value of ingredient from search input and search. This form will also include values from radio button inputs for dietary restrictions.
         const ingredientInput = $('.inputBox').val();
-        console.log(ingredientInput); 
         recipeApp.userDiet = $('input[name="diet"]:checked').val();
-        console.log(recipeApp.userDiet);
-        // console.log(dietButton);
 
+        // input user input of ingredients to the function to get recipes.
         recipeApp.getrecipes(ingredientInput);
-
-        // empty out the input for search once the string is collected. ✔
-        // $('#searchBox').empty();
 
         // move from header to results section. ✔
         $('html, body').animate({
