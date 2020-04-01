@@ -117,6 +117,18 @@ $('.reloadAll').on('click', function (e) {
     location.reload(true);
 })
 
+$("a[href^='#']").click(function(e) {
+    e.preventDefault();
+
+    let position = $($(this).attr("href")).offset().top;
+
+    $("body, html").animate(
+        {
+        scrollTop: position
+        } /* speed */
+    );
+});
+
 
 // Recipe App Inititated on doc ready
 $(function () {

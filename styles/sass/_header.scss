@@ -13,12 +13,14 @@ header {
     
     nav {
         width: 100vw;
-        height: 10vh;
-        position: sticky;
+        height: 13vh;
+        position: fixed;
         top: 0;
         background: rgba(0, 0, 0, 0.466);
-        padding: 1% 5%;
-
+        padding: 2% 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

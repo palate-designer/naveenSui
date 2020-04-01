@@ -28,8 +28,17 @@ h1, h2, h3, h4, p, a, li, ul {
     line-height: 26px;
 }
 
-h1, h2, h3, h4, h5, a {
+h1, h2, h3, h4, h5, {
     font-family: 'Righteous', cursive;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color:white;
+}
+
+a {
+    font-family: 'Oswald',
+    sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
@@ -45,6 +54,12 @@ h1 {
     font-weight: 300;
     text-shadow: 5px 5px 5px $charcoalBlack;
     text-align: center;
+}
+
+@media (max-width: 342px) {
+    h1 {
+        font-size: 1.8rem;
+    }
 }
 
 h2 {

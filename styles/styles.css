@@ -263,8 +263,16 @@ h1, h2, h3, h4, p, a, li, ul {
   line-height: 26px;
 }
 
-h1, h2, h3, h4, h5, a {
+h1, h2, h3, h4, h5 {
   font-family: 'Righteous', cursive;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+a {
+  font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   text-decoration: none;
@@ -290,6 +298,12 @@ h1 {
 @media screen and (min-width: 1280px) {
   h1 {
     font-size: 6rem;
+  }
+}
+
+@media (max-width: 342px) {
+  h1 {
+    font-size: 1.8rem;
   }
 }
 
@@ -494,12 +508,20 @@ header {
 
 header nav {
   width: 100vw;
-  height: 10vh;
-  position: -webkit-sticky;
-  position: sticky;
+  height: 13vh;
+  position: fixed;
   top: 0;
   background: rgba(0, 0, 0, 0.466);
-  padding: 1% 5%;
+  padding: 2% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .headerStyling {
@@ -667,7 +689,36 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: auto;
+}
+
+@media (max-width: 806px) {
+  main {
+    padding-top: 3vh;
+  }
+}
+
+@media (max-width: 607px) {
+  main {
+    padding-top: 10%;
+  }
+}
+
+@media (max-width: 471px) {
+  main {
+    padding-top: 15%;
+  }
+}
+
+@media (max-width: 394px) {
+  main {
+    padding-top: 20%;
+  }
+}
+
+@media (max-width: 342px) {
+  main {
+    padding-top: 25%;
+  }
 }
 
 .recipesHeader h2 {
