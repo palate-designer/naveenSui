@@ -9,27 +9,16 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+
     
     nav {
         width: 100vw;
         height: 10vh;
         position: sticky;
         top: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: $yellow;
+        background: rgba(0, 0, 0, 0.466);
+        padding: 0 5%;
 
-        .logo {
-            width: 12vw;
-            margin-right: 2rem;
-            margin-left: 2rem;
-            min-width: 10rem;
-        }
-
-        h2 {
-            margin-left: 2rem;
-        }
     }
 }
 
@@ -39,7 +28,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.466);
+        background: rgba(0, 0, 0, 0.466);
+
 
 }
 

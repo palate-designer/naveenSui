@@ -37,11 +37,12 @@ h1, h2, h3, h4, h5, a {
 }
 
 h1 {
-    @include fluid-type (2.5rem,8rem, 360px, 1280px);
+    @include fluid-type (2.5rem,6rem, 460px, 1280px);
     margin: 0;
     line-height: 5rem;
     font-family: 'Ultra',
     serif;
+    font-weight: 300;
     text-shadow: 5px 5px 5px $charcoalBlack;
     text-align: center;
 }
