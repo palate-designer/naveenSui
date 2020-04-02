@@ -85,12 +85,12 @@ main {
     }
 }
 
-.suggestedRecipes {
-    visibility: visible;
-}
+// .suggestedRecipes {
+//     visibility: visible;
+// }
 
 .emptySuggestions {
-    visibility: collapse;
+    display: none;
 }
 
 

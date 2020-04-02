@@ -784,12 +784,8 @@ main {
   color: white;
 }
 
-.suggestedRecipes {
-  visibility: visible;
-}
-
 .emptySuggestions {
-  visibility: collapse;
+  display: none;
 }
 
 .reload {
