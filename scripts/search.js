@@ -114,7 +114,7 @@ recipeApp.init = function () {
 
 $('.reloadAll').on('click', function (e) {
     e.preventDefault();
-    location.reload(true);
+    location.reload();
 })
 
 $("a[href^='#']").click(function(e) {
