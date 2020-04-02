@@ -119,12 +119,13 @@ recipeApp.init = function () {
 $('.reloadAll').on('click', function (e) {
     e.preventDefault();
     // location.reload(true);
-    $('ul')
-        .removeClass('suggestedRecipes')
-        .addClass('emptySuggestions');
-        console.log($(".inputBox").val());
+    $('.searchBoxClass').trigger('reset');
+    // $('ul')
+    //     .removeClass('suggestedRecipes')
+    //     .addClass('emptySuggestions');
+    //     console.log($(".inputBox").val());
         
-        $(".inputBox").val() = '';
+    //     $(".inputBox").val() = '';
         // $('input[name="diet"]:checked').val().empty();
     // $('input.value').empty();
 })
