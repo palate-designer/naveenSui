@@ -97,6 +97,9 @@ recipeApp.init = function () {
     // Function to get user input through the search box and pass that as an argument in the function recipeApp.getrecipes(ingredientInput);
     $('.searchBoxClass').on('submit', function (event) {
         event.preventDefault();
+        $("ul")
+            .removeClass("emptySuggestions")
+            .addClass("suggestedRecipes");
         // on form submit, take value of ingredient from search input and search. This form will also include values from radio button inputs for dietary restrictions.
         const ingredientInput = $('.inputBox').val();
         recipeApp.userDiet = $('input[name="diet"]:checked').val();
@@ -112,9 +115,14 @@ recipeApp.init = function () {
     })
 }
 
+//clear results and scroll to top
 $('.reloadAll').on('click', function (e) {
     e.preventDefault();
-    location.reload();
+    // location.reload(true);
+    $("ul")
+        .removeClass("suggestedRecipes")
+        .addClass("emptySuggestions");
+    
 })
 
 $("a[href^='#']").click(function(e) {

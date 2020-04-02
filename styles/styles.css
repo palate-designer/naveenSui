@@ -745,12 +745,12 @@ main {
   padding: 15%;
 }
 
-.recipesResults .results {
+.results {
   width: 100%;
   margin: 5% 0;
 }
 
-.recipesResults .suggestedRecipes {
+.suggestedRecipes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -764,14 +764,14 @@ main {
       justify-content: space-around;
 }
 
-.recipesResults .suggestedRecipes li {
+.suggestedRecipes li {
   width: calc(100% / 5);
   border: 1px solid grey;
   position: relative;
   min-width: 180px;
 }
 
-.recipesResults .suggestedRecipes li p {
+.suggestedRecipes li p {
   font-style: italic;
   text-align: center;
   position: absolute;
@@ -782,6 +782,14 @@ main {
   background-color: #17212171;
   width: 100%;
   color: white;
+}
+
+.suggestedRecipes {
+  visibility: visible;
+}
+
+.emptySuggestions {
+  visibility: collapse;
 }
 
 .reload {
@@ -799,6 +807,36 @@ main {
   height: 3vw;
   -webkit-box-shadow: 5px 5px 5px #172121;
           box-shadow: 5px 5px 5px #172121;
+  font-family: 'Oswald', sans-serif;
+  min-width: 8rem;
+  min-height: 4rem;
+  background: #d74e09;
+  font-size: calc(2rem + 1 * ((100vw - 360px) / 920));
+  font-weight: bold;
+  color: #f6f6f6;
+  text-transform: uppercase;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 360px) {
+  .reloadAll {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .reloadAll {
+    font-size: 3rem;
+  }
 }
 
 .reloadAll:active {
