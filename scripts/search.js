@@ -120,14 +120,11 @@ $('.reloadAll').on('click', function (e) {
     e.preventDefault();
     // location.reload(true);
     $('.searchBoxClass').trigger('reset');
-    // $('ul')
-    //     .removeClass('suggestedRecipes')
-    //     .addClass('emptySuggestions');
-    //     console.log($(".inputBox").val());
+    $('ul')
+        .removeClass('suggestedRecipes')
+        .addClass('emptySuggestions');
+        console.log($(".inputBox").val());
         
-    //     $(".inputBox").val() = '';
-        // $('input[name="diet"]:checked').val().empty();
-    // $('input.value').empty();
 })
 
 $("a[href^='#']").click(function(e) {
