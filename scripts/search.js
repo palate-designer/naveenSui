@@ -122,7 +122,11 @@ $('.reloadAll').on('click', function (e) {
     $('ul')
         .removeClass('suggestedRecipes')
         .addClass('emptySuggestions');
-    $('input').empty();
+        console.log($(".inputBox").val());
+        
+        $(".inputBox").val() = '';
+        // $('input[name="diet"]:checked').val().empty();
+    // $('input.value').empty();
 })
 
 $("a[href^='#']").click(function(e) {
