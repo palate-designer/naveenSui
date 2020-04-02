@@ -119,10 +119,10 @@ recipeApp.init = function () {
 $('.reloadAll').on('click', function (e) {
     e.preventDefault();
     // location.reload(true);
-    $("ul")
-        .removeClass("suggestedRecipes")
-        .addClass("emptySuggestions");
-    
+    $('ul')
+        .removeClass('suggestedRecipes')
+        .addClass('emptySuggestions');
+    $('input').empty();
 })
 
 $("a[href^='#']").click(function(e) {
