@@ -23,19 +23,11 @@ let keys = [
     ],
     counter = 0;
 
-console.log('initialkey', keys[counter]); //initial value
-
 recipeApp.key= keys[counter];
 
 recipeApp.keySwap = () => {
     counter = (counter + 1) % keys.length
-    console.log('increment counter', keys[counter]); 
-    //increment counter
-    //modulus (%) operater resets the counter to 0 when it reaches the length of the array; thus restarting the count whenever the counter(index) reaches the end of the array.
-    
     recipeApp.key = keys[counter];
-    
-    console.log("recipeApp.key", recipeApp.key); //key currently being used, 
 };
 
 
@@ -49,7 +41,7 @@ recipeApp.getrecipes = function (ingredientInput) {
         method: 'GET',
         dataType: 'json',
         data: {
-            apiKey: recipeApp.key, //key grabbed from the function on click for the submit button.
+            apiKey: recipeApp.key, 
             ingredients: ingredientInput
         }
     }).then(function (result) {
@@ -57,16 +49,12 @@ recipeApp.getrecipes = function (ingredientInput) {
         if (result == false) {
         } else {
             $('li').hide()
-            // Used forEach function to go through each array and append into li
-            //Setting alert to false before foreach in its default state
             let alerted = false;
 
             result.forEach(function (eachRecipe) {
 
-                // Capturing ID of all the recipes in a variable and popping it in the link
                 const recipeId = eachRecipe.id;
                 console.log('recipeId', recipeId)
-                //Make ajax call with new end point with recipeID to gain recipe info on url, dietary restrictions, instructions and etc..
                 //Ajax 2
                 $.ajax({
                     url: `https://api.spoonacular.com/recipes/${recipeId}/information`,
@@ -90,7 +78,6 @@ recipeApp.getrecipes = function (ingredientInput) {
                                 </li>`
                         $('ul.suggestedRecipes').append(htmlToAppend);
                     } else if (eachInfo.diets.includes(recipeApp.userDiet)) {
-                        // if dietary restrictions selected, check against input value to match diets array input value in API
                         const recipeInstruction = eachInfo.sourceUrl;
                         const htmlToAppend = `
                                 <li>
@@ -102,10 +89,7 @@ recipeApp.getrecipes = function (ingredientInput) {
                         $('ul.suggestedRecipes').append(htmlToAppend);
                     } else {
                         if (!alerted) {
-                            // if no results come from both ingredient and dietary restriction input, then switch on first alert to true, and send alert. No other alerts should come up.
                             alerted = true;
-                            // alert("Damnnnn !! We Rock");
-
                             swal("Sorry!", "Your selection didn't bring up any results! Please try again!", "error");
                             
                         }
@@ -118,22 +102,16 @@ recipeApp.getrecipes = function (ingredientInput) {
 
 
 recipeApp.init = function () {
-    // recipeApp.getrecipes();
-
-    // Function to get user input through the search box and pass that as an argument in the function recipeApp.getrecipes(ingredientInput);
     $('.searchBoxClass').on('submit', function (event) {
         event.preventDefault();
         $("ul")
             .removeClass("emptySuggestions")
             .addClass("suggestedRecipes");
-        // on form submit, take value of ingredient from search input and search. This form will also include values from radio button inputs for dietary restrictions.
         const ingredientInput = $('.inputBox').val();
         recipeApp.userDiet = $('input[name="diet"]:checked').val();
 
-        // input user input of ingredients to the function to get recipes.
         recipeApp.getrecipes(ingredientInput);
 
-        // move from header to results section. ✔
         $('html, body').animate({
             scrollTop: $("main").offset().top
         },
@@ -148,9 +126,9 @@ recipeApp.init = function () {
 //clear results and scroll to top
 $('.reloadAll').on('click', function (e) {
     e.preventDefault();
-    $('.searchBoxClass').trigger('reset'); //reset form inputs
+    $('.searchBoxClass').trigger('reset'); 
     $('ul')
-        .removeClass('suggestedRecipes') //hide placeholders
+        .removeClass('suggestedRecipes') 
         .addClass('emptySuggestions');
     
 })
@@ -163,7 +141,7 @@ $("a[href^='#']").click(function(e) {
     $("body, html").animate(
         {
         scrollTop: position
-        } /* speed */
+        } 
     );
 });
 
